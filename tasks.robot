@@ -50,7 +50,7 @@ Answer the Question
 
     ${resp}   ${conversation}   Chat Completion Create   
     ...    user_content=${question}: A=${answer_option_A}, B=${answer_option_B}, C=${answer_option_C}, D=${answer_option_D}. Vastaa vain oikean vastauksen kirjaimella A, B, C, D tai E ilman mitään muuta tekstiä. Pelkkä yksi kirjain.
-    ...    temperature=0.5
+    ...    temperature=0.2
     ${resp}   Strip String    ${resp}
     Log To Console    ${resp}
 
