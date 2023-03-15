@@ -22,7 +22,7 @@ Finnish national upper secondary schools exam
         Answer the Question   ${question_number}
         ${question_number}  Evaluate    ${question_number}+1
     END
-    Sleep    25
+    Sleep    20
 
 *** Keywords ***
 Authorize to ChatGPT
@@ -48,7 +48,7 @@ Answer the Question
     ${answer_option_C}   Get text   ((//*[@class="yo-multiple-choice-question__options"])[${question_number}]//span)[5]
     ${answer_option_D}   Get text   ((//*[@class="yo-multiple-choice-question__options"])[${question_number}]//span)[7]
 
-    ${resp}   ${conversation}   Chat Completion Create   
+    ${resp}   ${conversation}   Chat Completion Create  
     ...    user_content=${question}: A=${answer_option_A}, B=${answer_option_B}, C=${answer_option_C}, D=${answer_option_D}. Vastaa vain oikean vastauksen kirjaimella A, B, C, D tai E ilman mitään muuta tekstiä. Pelkkä yksi kirjain.
     ...    temperature=0.2
     ${resp}   Strip String    ${resp}
